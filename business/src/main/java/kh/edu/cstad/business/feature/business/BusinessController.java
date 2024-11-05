@@ -1,4 +1,17 @@
 package kh.edu.cstad.business.feature.business;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/v1/business")
 public class BusinessController {
+
+    @GetMapping
+    Map<String, String> getBusiness() {
+        return Map.of("business", "business");
+    }
 }

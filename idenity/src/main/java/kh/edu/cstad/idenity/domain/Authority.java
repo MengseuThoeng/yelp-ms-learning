@@ -23,8 +23,7 @@ public class Authority {
     @Column(unique = true, nullable = false, length = 48)
     private String name;
 
-    @OneToMany(mappedBy = "authority")
-    @JsonBackReference
-    private Set<UserAuthority> userAuthorities;
+    @ManyToMany(mappedBy = "authorities")
+    private Set<User> users;
 
 }

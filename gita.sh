@@ -1,7 +1,7 @@
 git add .
 
 
-git commit -m "Restaurant & Business Config Client Done..."
+git commit -m "Implement OAUTH2"
 
 
 git push
