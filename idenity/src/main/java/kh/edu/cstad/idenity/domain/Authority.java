@@ -1,6 +1,5 @@
 package kh.edu.cstad.idenity.domain;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,7 +22,8 @@ public class Authority {
     @Column(unique = true, nullable = false, length = 48)
     private String name;
 
-    @ManyToMany(mappedBy = "authorities")
-    private Set<User> users;
+    @OneToMany(mappedBy = "authority")
+    @JsonBackReference
+    private Set<UserAuthority> userAuthorities;
 
 }

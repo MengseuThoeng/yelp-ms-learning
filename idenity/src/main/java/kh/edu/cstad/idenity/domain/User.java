@@ -2,7 +2,7 @@ package kh.edu.cstad.idenity.domain;
 
 
 import jakarta.persistence.*;
-import kh.edu.cstad.idenity.jpa.Auditable;
+import kh.edu.cstad.idenity.config.jpa.Auditable;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -85,7 +85,7 @@ public class User extends Auditable<String> {
     @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean emailVerified;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Authority> authorities;
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    private Set<UserAuthority> userAuthorities;
 
 }
